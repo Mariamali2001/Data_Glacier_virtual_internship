@@ -3,7 +3,6 @@ import pandas as pd
 import pickle 
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import StandardScaler
 
 data = pd.read_csv('E:/solo projects/Data_Glacier_virtual_internship/Data_Glacier_virtual_internship/week 4/IRIS.csv')
 
