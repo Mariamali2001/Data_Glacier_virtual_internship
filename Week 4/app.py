@@ -1,3 +1,4 @@
+from unittest import result
 from flask import Flask , request,render_template
 import numpy as np
 import pickle 
@@ -13,9 +14,12 @@ def home():
 
 @app.route('/predict',methods=['POST'])
 def predict():
+    
+
+
     features = [float(x) for x in request.form.values()]
     final_features = [np.array(features)] 
-    prediction = model.predict(final_features) 
+    prediction = model.predict(final_features)
     
     return render_template('index.html', prediction_text='The flower species is {}'.format(prediction))
 
