@@ -1,1 +1,1 @@
-web: gunicorn IrisWebsite:app --log-file -
+web: gunicorn && stramlit run IrisWebsite.py
