@@ -1,7 +1,15 @@
+import yaml
+import logging
+import subprocess
+import yaml
+import datetime
+import gc
+import re 
+import pandas as pd
 def read_config_file(filepath):
     with open(filepath, 'r') as stream:
         try:
-            return yaml.safe_load(stream,Loader=yaml.Loader)
+            return yaml.safe_load(stream)
         except yaml.YAMLError as exc:
             logging.error(exc)
 
