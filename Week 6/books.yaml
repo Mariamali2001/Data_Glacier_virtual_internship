@@ -9,6 +9,7 @@ columns:
     - Id
     - Title
     - Price
+    - Userid
     - profileName
     - review/helpfulness
     - review/score
