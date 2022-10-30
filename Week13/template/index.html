@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HealthCare Presistenty of drug</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <style>
+      * {
+      box-sizing: border-box;
+      }
+      html, body {
+      min-height: 100vh;
+      padding: 0;
+      margin: 0;
+      font-family: Roboto, Arial, sans-serif;
+      font-size: 14px; 
+      color: #666;
+      }
+      input, textarea { 
+      outline: none;
+      }
+      body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      background: #aed375;
+      }
+      h1 {
+      margin-top: 0;
+      font-weight: 500;
+      }
+      form {
+      position: relative;
+      width: 80%;
+      border-radius: 30px;
+      background: #fff;
+      }
+      .form-left-decoration,
+      .form-right-decoration {
+      content: "";
+      position: absolute;
+      width: 50px;
+      height: 20px;
+      border-radius: 20px;
+      background: #5a7233;
+      }
+      .form-left-decoration {
+      bottom: 60px;
+      left: -30px;
+      }
+      .form-right-decoration {
+      top: 60px;
+      right: -30px;
+      }
+      .form-left-decoration:before,
+      .form-left-decoration:after,
+      .form-right-decoration:before,
+      .form-right-decoration:after {
+      content: "";
+      position: absolute;
+      width: 50px;
+      height: 20px;
+      border-radius: 30px;
+      background: #fff;
+      }
+      .form-left-decoration:before {
+      top: -20px;
+      }
+      .form-left-decoration:after {
+      top: 20px;
+      left: 10px;
+      }
+      .form-right-decoration:before {
+      top: -20px;
+      right: 0;
+      }
+      .form-right-decoration:after {
+      top: 20px;
+      right: 10px;
+      }
+      .circle {
+      position: absolute;
+      bottom: 80px;
+      left: -55px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #fff;
+      }
+      .form-inner {
+      padding: 40px;
+      }
+      .form-inner input,
+      .form-inner textarea {
+      display: block;
+      width: 100%;
+      padding: 15px;
+      margin-bottom: 10px;
+      border: none;
+      border-radius: 20px;
+      background: #d0dfe8;
+      }
+      .form-inner textarea {
+      resize: none;
+      }
+      button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 20px;
+      border-radius: 20px;
+      border: none;
+      border-bottom: 4px solid #3e4f24;
+      background: #769741; 
+      font-size: 16px;
+      font-weight: 400;
+      color: #fff;
+      }
+      button:hover {
+      background: #3e4f24;
+      } 
+      @media (min-width: 568px) {
+      form {
+      width: 60%;
+      }
+      }
+    </style>
+  </head>
+  <body>
+    <form action ="{{ url_for('predict')}}"method="post" class="decor">
+      <div class="form-left-decoration"></div>
+      <div class="form-right-decoration"></div>
+      <div class="circle"></div>
+      <div class="form-inner">
+        <h1>Presistenty_flag of drugs</h1>
+        <input type="text" name="Ptid" placeholder="ptid" required="required" />
+        <input type="text" name="Gender" placeholder="gender" required="required" />
+        <input type="text" name="Race" placeholder="race" required="required" />
+        <input type="text" name="Ethnicity" placeholder="ethnicity" required="required" />
+        <input type="text" name="Region" placeholder="region" required="required" />
+        <input type="text" name="Age_Bucket" placeholder="age_Bucket" required="required" />
+        <input type="text" name="Ntm_Speciality" placeholder="ntm_Speciality" required="required" />
+        <input type="text" name="Ntm_Specialist_Flag" placeholder="ntm_Specialist_Flag" required="required" />
+        <input type="text" name="Ntm_Speciality_Bucket" placeholder="ntm_Speciality_Bucket" required="required" />
+        %tb
+        <input type="text" name="Gluco_Record_Prior_Ntm" placeholder="gluco_Record_Prior_Ntm" required="required" />
+        <input type="text" name="Gluco_Record_During_Rx" placeholder="gluco_Record_During_Rx" required="required" />
+        <input type="text" name="Dexa_Freq_During_Rx" placeholder="dexa_Freq_During_Rx" required="required" />
+        <input type="text" name="Dexa_During_Rx" placeholder="dexa_During_Rx" required="required" />
+        <input type="text" name="Frag_Frac_Prior_Ntm" placeholder="frag_Frac_Prior_Ntm" required="required" />
+        <input type="text" name="Frag_Frac_During_Rx" placeholder="frag_Frac_During_Rx" required="required" />
+        <input type="text" name="Risk_Segment_Prior_Ntm" placeholder="risk_Segment_Prior_Ntm" required="required" />
+        <input type="text" name="Tscore_Bucket_Prior_Ntm" placeholder="tscore_Bucket_Prior_Ntm" required="required" />
+        <input type="text" name="Risk_Segment_During_Rx" placeholder="risk_Segment_During_Rx" required="required" />
+        <input type="text" name="Tscore_Bucket_During_Rx" placeholder="tscore_Bucket_During_Rx" required="required" />
+        <input type="text" name="Change_T_Score" placeholder="change_T_Score" required="required" />
+        <input type="text" name="Change_Risk_Segment" placeholder="change_Risk_Segment" required="required" />
+        %tb
+        <input type="text" name="Adherent_Flag" placeholder="adherent_Flag" required="required" />
+        <input type="text" name="Idn_Indicator" placeholder="idn_Indicator" required="required" />
+        <input type="text" name="Injectable_Experience_During_Rx" placeholder="injectable_Experience_During_Rx" required="required" />
+        <input type="text" name="Count_Of_Risks" placeholder="count_Of_Risks" required="required" />
+        <input type="text" name="Count_Of_Concomitancy" placeholder="count_Of_Concomitancy" required="required" />
+        <input type="text" name="Count_Of_Comorbidity" placeholder="count_Of_Comorbidity" required="required" />
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+        <br>
+        <br>
+        {{ prediction_text }}  
+    </div>
+    </form>
+    
+
+    
+
+  </body>
+</html>
+
+
